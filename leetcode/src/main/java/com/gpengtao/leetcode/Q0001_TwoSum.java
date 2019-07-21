@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author pengtao.geng on 2019-06-27 01:56
  */
-public class Q01TwoSum {
+public class Q0001_TwoSum {
 
 	public int[] twoSum(int[] nums, int target) {
 		if (nums == null || nums.length < 2) {
@@ -22,7 +22,7 @@ public class Q01TwoSum {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(new Q01TwoSum().twoSum(new int[]{2, 7, 11, 15}, 9)));
-		System.out.println(Arrays.toString(new Q01TwoSum().twoSum(new int[]{1, 2, 9, 5, 4}, 6)));
+		System.out.println(Arrays.toString(new Q0001_TwoSum().twoSum(new int[]{2, 7, 11, 15}, 9)));
+		System.out.println(Arrays.toString(new Q0001_TwoSum().twoSum(new int[]{1, 2, 9, 5, 4}, 6)));
 	}
 }
