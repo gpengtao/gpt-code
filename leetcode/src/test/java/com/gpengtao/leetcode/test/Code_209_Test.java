@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Code_209_Test {
 
 	@Test
-	public void test_0() {
+	public void test_1() {
 		// 普通case
 		int[] array = new int[]{2, 3, 1, 2, 4, 3};
 		int s = 7;
@@ -21,7 +21,7 @@ public class Code_209_Test {
 	}
 
 	@Test
-	public void test_1() {
+	public void test_2() {
 		// 空数组
 		int[] array = new int[]{};
 		int s = 7;
@@ -31,7 +31,7 @@ public class Code_209_Test {
 	}
 
 	@Test
-	public void test_2() {
+	public void test_3() {
 		// 全部之后也不满足
 		int[] array = new int[]{2, 3, 1, 2, 4, 3};
 		int s = 70;
@@ -41,7 +41,7 @@ public class Code_209_Test {
 	}
 
 	@Test
-	public void test_3() {
+	public void test_4() {
 		// 题目中没说这个情况，应该抱有疑问
 		int[] array = new int[]{2, 3, 1, 2, 4, 3};
 		int s = 0;

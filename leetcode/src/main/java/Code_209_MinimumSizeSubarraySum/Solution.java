@@ -5,6 +5,9 @@ import java.util.Arrays;
 /**
  * @author pengtao.geng on 2020/1/31 3:38 下午
  */
+/*
+https://leetcode-cn.com/problems/minimum-size-subarray-sum/
+ */
 public class Solution {
 
 	public int[] minSubArrayLen(int[] nums, int s) {
