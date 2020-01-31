@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode;
+package com.gpengtao.leetcode.main;
 
 import java.util.Arrays;
 
