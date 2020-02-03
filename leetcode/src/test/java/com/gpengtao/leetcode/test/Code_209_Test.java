@@ -32,7 +32,7 @@ public class Code_209_Test {
 
 	@Test
 	public void test_3() {
-		// 全部之后也不满足
+		// 全部之和也不满足
 		int[] array = new int[]{2, 3, 1, 2, 4, 3};
 		int s = 70;
 
