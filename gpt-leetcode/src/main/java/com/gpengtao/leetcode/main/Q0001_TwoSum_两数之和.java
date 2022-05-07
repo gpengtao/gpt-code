@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * @author pengtao.geng on 2019-06-27 01:56
  */
-public class Q0001_TwoSum {
+public class Q0001_TwoSum_两数之和 {
 
 	public int[] twoSum(int[] nums, int target) {
 		if (nums == null || nums.length < 2) {
@@ -43,7 +43,7 @@ public class Q0001_TwoSum {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(new Q0001_TwoSum().twoSum2(new int[]{2, 7, 11, 15}, 9)));
-		System.out.println(Arrays.toString(new Q0001_TwoSum().twoSum2(new int[]{5, 2, 9, 1, 4}, 6)));
+		System.out.println(Arrays.toString(new Q0001_TwoSum_两数之和().twoSum2(new int[]{2, 7, 11, 15}, 9)));
+		System.out.println(Arrays.toString(new Q0001_TwoSum_两数之和().twoSum2(new int[]{5, 2, 9, 1, 4}, 6)));
 	}
 }
