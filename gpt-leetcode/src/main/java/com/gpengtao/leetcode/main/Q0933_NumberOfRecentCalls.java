@@ -4,6 +4,10 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 /**
+ * 933. 最近的请求次数
+ *
+ * <a href="https://leetcode-cn.com/problems/number-of-recent-calls/">https://leetcode-cn.com/problems/number-of-recent-calls/</a>
+ *
  * @author pengtao.geng on 2022/5/6 09:07.
  */
 public class Q0933_NumberOfRecentCalls {
@@ -15,9 +19,6 @@ public class Q0933_NumberOfRecentCalls {
 		private static final int LENGTH = 3001;
 		private final int[] record = new int[LENGTH];
 		private int current = 0;
-
-		public RecentCounter() {
-		}
 
 		public int ping(int t) {
 			record[current] = t;
@@ -43,10 +44,8 @@ public class Q0933_NumberOfRecentCalls {
 	}
 
 	public static class RecentCounter2 {
-		private final Queue<Integer> queue = new ArrayDeque<>();
 
-		public RecentCounter2() {
-		}
+		private final Queue<Integer> queue = new ArrayDeque<>();
 
 		public int ping(int t) {
 			queue.offer(t);

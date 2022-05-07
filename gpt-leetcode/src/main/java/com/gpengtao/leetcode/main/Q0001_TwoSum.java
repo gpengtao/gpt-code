@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 1. 两数之和
+ *
+ * <a href="https://leetcode-cn.com/problems/two-sum/">https://leetcode-cn.com/problems/two-sum/</a>
+ *
  * @author pengtao.geng on 2019-06-27 01:56
  */
 public class Q0001_TwoSum {
