@@ -1,0 +1,26 @@
+@startuml
+skinparam handwritten true
+
+actor user
+component 航班
+component 火车
+frame trade
+frame 代硫酸
+frame 物流
+frame order
+
+user --> trade #red : hello
+trade ..> 飞机 #red : 半线下流程
+飞机 --> user #red : 线下送货
+ 
+user --> trade #blue : 火车送单
+trade --> order #blue : 需要
+order --> 代硫酸 #blue : xx
+代硫酸 -down--> 物流 #blue : yy
+物流 -down--> 火车 #blue : zzz
+火车 -down--> user #blue : user收货
+ 
+user -down--> trade #green : 航班单
+trade -down--> 航班 #green : 航班接单
+航班 -down--> user #green : 航班送货
+@enduml

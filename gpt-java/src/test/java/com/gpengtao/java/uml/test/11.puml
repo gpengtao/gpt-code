@@ -1,0 +1,47 @@
+@startuml
+
+skinparam handwritten true
+'skinparam componentStyle uml2
+
+frame 业务服务层 {
+    component a1 as a1
+    component a2 as a2
+    component a3 as a3
+    component a4 as report
+}
+
+frame 业务适配层 {
+    component b1 as b1
+    component [b2] as b2
+    component b3 as b3
+    component b4 as b4
+}
+
+frame 业务展示层 {
+    component pad1 as pad1
+    component pad2
+}
+
+frame 数据采集层 {
+    component 温度传感器
+    component 压力传感器
+    component 摄像头
+}
+
+tas -up--> a1
+tas -up--> a2
+tas -up--> a3
+
+alpha -up--> a2
+alpha -up--> a1
+
+a3 -down--> notify
+a2 -down--> notify
+
+压力传感器 -up--> iot
+
+pad1 -up--> 11
+pad1 -up--> 22
+pad1 -up--> 44
+
+@enduml

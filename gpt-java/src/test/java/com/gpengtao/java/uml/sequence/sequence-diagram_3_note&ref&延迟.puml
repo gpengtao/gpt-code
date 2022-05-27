@@ -1,0 +1,45 @@
+@startuml
+
+participant A
+participant B
+participant C
+participant D
+
+== note（注释）怎么写 ==
+
+A -> D : hello1
+note right : A和D说hello1
+
+A -> D : hello2
+hnote right : A和D说hello2
+
+A -> D : hello3
+rnote right : A和D说hello3
+
+|||
+|||
+|||
+
+== ref over（引用）怎么写 ==
+
+ref over A, B, C, D : init
+A -> B : hello
+B --> A : wold
+ref over B : ret
+
+|||
+|||
+|||
+|||
+
+== 延迟 ==
+
+A -> B : hello b
+...
+B --> A : hello a
+
+A -> C : hello c
+...五分钟以后...
+C --> A : hello a
+
+@enduml

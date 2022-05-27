@@ -1,0 +1,19 @@
+@startuml
+
+skinparam handwritten true
+
+left to right direction
+
+
+actor 1
+actor 2
+
+entity a2
+entity a1
+
+entity p1
+entity p2
+entity p3
+entity p4
+
+@enduml

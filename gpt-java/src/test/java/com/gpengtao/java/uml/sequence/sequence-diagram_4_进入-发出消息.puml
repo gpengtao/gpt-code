@@ -1,0 +1,42 @@
+@startuml
+
+'这个参数改变<<>>显示的样子
+skinparam guillemet false
+
+title
+__Simple__ **communication** example
+<u>Simple</u> <i>communication</i> <font color=red>example</font>
+end title
+
+participant A <<(C,#ADD1B2)a1, a2, a3>>
+participant B <<(C,#ADD1B2)b1, b2>>
+
+== 生命线激活 ==
+activate A
+
+A -> B : hello b
+activate B
+
+B -> B : internal call
+activate B #DarkSalmon
+
+create control C <<(C,#ADD1B2)>>
+B -> C : call c
+C --> B : ret
+deactivate B
+
+B --> A : hello a
+deactivate B
+
+deactivate A
+
+== 进入、发出消息==
+
+[-> A : receive message
+A -> B : notify b
+B --> A : ret
+[<-- A : done
+
+
+hide footbox
+@enduml

@@ -1,0 +1,58 @@
+@startuml
+skinparam handwritten true
+
+frame xxx {
+    component core
+}
+
+frame yyy {
+    component yyy_core
+    note right of yyy_core
+        xxx
+    end note
+
+    component 系统1
+    note right of 系统1
+        xxx
+    end note
+
+    component 系统2
+    note right of 系统2
+        分发
+    end note
+
+    component yyy_man
+    note right of yyy_man
+        xxx
+    end note
+
+    component yyy_router
+    note right of yyy_router
+        xxx
+    end note
+
+    component yyy_booking
+    note right of yyy_booking
+        yyy下单入口
+    end note
+
+    yyy_man -down--> yyy_core
+    系统1 -down--> yyy_core
+    系统2 -down--> yyy_core
+    yyy_core -down--> yyy_router
+    yyy_booking -down--> yyy_core
+}
+
+frame downstream {
+    component 111
+    component 222
+    component 333
+}
+
+系统1 -up--> core
+
+系统2 -up--> 111
+系统2 -up--> 222
+系统2 -up--> 333
+
+@enduml

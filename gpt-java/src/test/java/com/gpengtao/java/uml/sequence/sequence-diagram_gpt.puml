@@ -1,0 +1,67 @@
+@startuml
+skinparam handwritten true
+
+box "生产计划" #LightBlue
+
+control 算法
+
+control 快照
+
+database data_production_plan
+
+control 校验
+
+end box
+
+control wmonitor
+
+
+==== 1.do prepare ====
+
+group 黑盒算法
+end group
+算法 ->o 快照:target plan,\ncurrent_version(最后merge的时候用这个做乐观锁)
+
+activate 快照
+快照 ->o data_production_plan:1.生成plan版本号;\n2.insert@plan_snapshot
+data_production_plan --\o 快照
+deactivate 快照
+
+
+==== 2.do check ====
+
+
+快照 ->o 校验:1.source:静态，4点半，动态，eg.;\n2.old plan&detail & new plan&detail\n3.check动作的一个唯一标识
+activate 快照
+activate 校验
+group 黑盒校验
+校验 ->o 校验:check case1
+校验 ->o 校验:check case2
+校验 ->o 校验:check case3
+校验 ->o data_production_plan:落库\ncheck_result\ncheck_result_detail
+data_production_plan --\o 校验
+校验 ->o wmonitor:开发关心的业务异常
+end group
+校验 --\o 快照:1.handleType:通过，阻塞,eg.;\n2.reason;
+deactivate 校验
+deactivate 快照
+
+==== 3.do merge ====
+
+alt ok
+快照 ->o data_production_plan:delete&insert@plan&plan_detail
+activate 快照
+data_production_plan --\o 快照
+快照 ->o data_production_plan:标记merged@plan_snapshot
+data_production_plan --\o 快照
+快照 --\o 算法:ok
+
+else no ok
+
+快照 ->o data_production_plan:标记discard@plan_snapshot
+data_production_plan --\o 快照
+快照 --\o 算法:ok
+deactivate 快照
+end
+
+@enduml

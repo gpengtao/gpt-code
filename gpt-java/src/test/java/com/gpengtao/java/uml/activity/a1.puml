@@ -1,0 +1,18 @@
+@startuml
+start
+
+:init;
+
+if (11) then (yes)
+    :111;
+elseif (22)
+    :222;
+elseif (33)
+    :333;
+elseif (44)
+    :44;
+else
+    :not support;
+endif
+stop
+@enduml

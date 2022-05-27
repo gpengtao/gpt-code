@@ -1,0 +1,13 @@
+@startuml
+
+skinparam handwritten true
+
+start
+:同步;
+:计算1;
+:计算2;
+:下发1;
+:下发2;
+stop
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+
+title 测试一下时序图
+
+
+'注释这么写
+
+/'
+注释也可以这么写
+'/
+
+actor Foo1
+
+box "这是个box" #lightblue
+boundary    Foo2
+control     Foo3
+entity      Foo4
+end box
+
+box "this's box2" #lightyellow
+database    Foo5
+collections Foo6
+end box
+
+participant Foo7 as F7 #green
+
+activate Foo1
+
+Foo1 ->o Foo2 : Send To boundary
+activate Foo2
+
+Foo2 ->o Foo3 : Send To control
+activate Foo3
+
+Foo3 -->o Foo2 : ret 3333
+deactivate Foo3
+
+Foo2 --> Foo1
+deactivate Foo2
+
+Foo1 ->o Foo4 : To entity
+activate Foo4
+
+Foo4 ->o Foo5 : To database
+activate Foo5
+Foo5 -->o Foo4 : ret success
+deactivate Foo5
+
+Foo4 ->o Foo6 : To collections
+activate Foo6
+Foo6 -->o Foo4 : ret 6666
+deactivate Foo6
+
+Foo4 -->o Foo1 : ret 4444
+deactivate Foo4
+
+deactivate Foo1
+
+Foo1 -> F7 : Hello
+
+F7 --> Foo1 :world
+
+@enduml

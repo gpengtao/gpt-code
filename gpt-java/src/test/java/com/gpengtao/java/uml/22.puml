@@ -1,0 +1,42 @@
+@startuml
+
+skinparam handwritten true
+
+actor 人
+actor 员工
+component 航班
+component 骑车
+
+frame tarde
+frame 物流
+frame kfc
+frame 火车
+
+人 -down--> tarde #red : 11
+tarde -down--> kfc #red : xx
+kfc -down--> 物流 #red : 下发
+物流 -down--> 人 #red : 配送
+
+人 -down--> tarde #orange : 外卖
+tarde -down--> kfc #orange : 同步
+kfc -down--> 骑车 #orange : 下发
+骑车 -down--> 人 #orange : 配送
+
+人 -down--> tarde #purple : 航班送
+tarde -down--> kfc #purple : 同步
+kfc -down--> 火车 #purple : 发起
+火车 -down--> 物流 #purple : 下发
+物流 -down--> 航班 #purple : 配送
+
+人 -down--> tarde #blue : 预售
+tarde -down--> kfc #blue : 同步
+kfc -down--> 火车 #blue : 批量补货
+火车 -down--> 物流 #blue : 下发
+物流 -down--> 骑车 #blue : 送
+物流 -down--> 人 #blue : 送家
+
+员工 -down--> kfc #green : 内部单
+kfc -down--> 物流 #green : 下
+物流 -down--> 员工 #green : 拿走
+
+@enduml

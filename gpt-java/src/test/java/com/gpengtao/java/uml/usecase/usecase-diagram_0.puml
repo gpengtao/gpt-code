@@ -1,0 +1,49 @@
+@startuml
+
+skinparam handwritten true
+
+skinparam usecase {
+	BackgroundColor DarkSeaGreen
+	BorderColor DarkSlateGray
+
+	BackgroundColor<< Main >> YellowGreen
+	BorderColor<< Main >> YellowGreen
+
+	ArrowColor Olive
+	ActorBorderColor black
+	ActorFontName Courier
+
+	ActorBackgroundColor<< Human >> Gold
+}
+
+'默认顺序
+'top to bottom direction
+
+left to right direction
+
+actor user <<hello>>
+actor user2 <<world>>
+
+user -> user2
+
+rectangle "我们的use case们" {
+    (case 1) --> (sub case 1)
+    (case 1) --> (sub case 2)
+
+    (case 2) --> (sub case 3)
+    (case 2) --> (sub case 4)
+
+    (sub case 3) --> (sub sub 1)
+    (sub case 3) --> (sub sub 2)
+
+    (sub case 1) --> (sub sub 3)
+    (sub case 1) --> (sub sub 4)
+}
+
+user --> (case 1)
+user --> (case 2)
+
+user2 -up-> (sub case 1)
+user2 -up-> (sub case 3)
+
+@enduml

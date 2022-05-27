@@ -1,0 +1,52 @@
+@startuml
+
+participant A
+participant B
+
+A -> B : auth request
+note left : 这是A发给B的，请求auth
+
+alt success case
+    B --> A : accept
+else xxx fail case
+    B --> A : xxx fail
+
+    group in B group
+        opt 11
+            A ->o B : request 11
+        end
+
+        opt 22
+            A ->o B : request 22
+        end
+
+        alt 33
+            A ->o B : request 33-0
+        else 33-1
+            A ->o B : request 33-1
+        else 33-2
+            A ->o B : request 33-2
+        end
+
+        loop 100
+            A -> A : wait
+            note over A : 循环等待
+        end
+
+        par parallel
+            A -> B : ppp-A->B
+            A -> C : ppp-A->C
+        end
+
+        critical very import
+            A -> D : he he
+        end
+    end
+
+else yyy fail case
+    B --> A : yyy fail
+else other fail case
+    B --> A : zzz fail
+end
+
+@enduml
