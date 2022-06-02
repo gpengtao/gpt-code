@@ -4,7 +4,7 @@ package com.gpengtao.java.collection;
 import com.google.common.collect.Lists;
 import com.gpengtao.java.model.Person;
 import com.gpengtao.java.model.PersonSum;
-import com.gpengtao.java.ModelGenerateUtil;
+import com.gpengtao.utiles.ModelGenerateUtil;
 import org.junit.Test;
 
 import java.util.Comparator;
@@ -111,7 +111,7 @@ public class StreamTest {
 	}
 
 	@Test
-	public void test_group() throws Exception {
+	public void test_group() {
 		List<Person> persons = Lists.newArrayList();
 		for (int i = 0; i < 10; i++) {
 			persons.add(ModelGenerateUtil.generateModel(Person.class));
