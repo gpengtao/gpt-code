@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -95,7 +96,7 @@ public class ModelGenerateUtil {
 		}
 
 		// Map
-		if (clazz.isAssignableFrom(Map.class)) {
+		if (clazz.isAssignableFrom(Map.class) || clazz.isAssignableFrom(HashMap.class)) {
 			Object[] twoKey = generateTwoObjForType(typeParameters[0]);
 			Object[] twoValue = generateTwoObjForType(typeParameters[1]);
 
