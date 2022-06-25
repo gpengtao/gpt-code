@@ -4,7 +4,7 @@ package com.gpengtao.java.collection;
 import com.google.common.collect.Lists;
 import com.gpengtao.java.model.Person;
 import com.gpengtao.java.model.PersonSum;
-import com.gpengtao.utiles.ModelGenerateUtil;
+import com.gpengtao.utils.ModelGenerateUtil;
 import org.junit.Test;
 
 import java.util.Comparator;

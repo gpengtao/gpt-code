@@ -1,4 +1,4 @@
-package com.gpengtao.utiles;
+package com.gpengtao.utils;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -28,37 +28,32 @@ public class ModelGenerateUtil {
 	/**
 	 * 生成class对应的对象
 	 *
-	 * @param clazz 类
-	 * @param <T>   泛型
-	 * @return 对象
+	 * @param clazz          主类型
+	 * @param typeParameters 关联的泛型类型，比如List、Map对应的泛型类型
+	 * @param <T>            泛型
+	 * @return model
 	 */
-	public static <T> T generateModel(Class<T> clazz) {
-		try {
-			return doGenerate(clazz, null, null);
-		} catch (Exception e) {
-			throw new RuntimeException("生成对象异常", e);
-		}
+	public static <T> T generateModel(Class<T> clazz, Type... typeParameters) {
+		return doGenerate(clazz, null, typeParameters);
 	}
 
 	/**
 	 * 生成对象，递归调用
 	 *
-	 * @param clazz       类
-	 * @param actualTypes 这个类相关的泛型类型
-	 * @param namePatten  string类型时，字符串前缀
-	 * @param <T>         泛型
+	 * @param <T>            泛型
+	 * @param clazz          主类型
+	 * @param valuePatten    string类型时，字符串前缀
+	 * @param typeParameters 这个类相关的泛型类型
 	 * @return 对象
-	 * @throws InstantiationException 反射异常
-	 * @throws IllegalAccessException 反射异常
 	 */
 	@SuppressWarnings("unchecked")
-	private static <T> T doGenerate(Class<?> clazz, Type[] actualTypes, String namePatten) throws InstantiationException, IllegalAccessException {
+	private static <T> T doGenerate(Class<?> clazz, String valuePatten, Type... typeParameters) {
 		// String
 		if (clazz.isAssignableFrom(String.class)) {
-			if (maybeDateString(namePatten)) {
+			if (maybeDateString(valuePatten)) {
 				return (T) randomDateString();
 			} else {
-				return (T) randomString(namePatten);
+				return (T) randomString(valuePatten);
 			}
 		}
 
@@ -93,16 +88,16 @@ public class ModelGenerateUtil {
 		}
 
 		// List
-		if (clazz.isAssignableFrom(List.class)) {
-			Object[] twoObj = generateTwoObjForType(actualTypes[0]);
+		if (clazz.isAssignableFrom(List.class) || clazz.isAssignableFrom(ArrayList.class)) {
+			Object[] twoObj = generateTwoObjForType(typeParameters[0]);
 
 			return (T) Lists.newArrayList(twoObj[0], twoObj[1]);
 		}
 
 		// Map
 		if (clazz.isAssignableFrom(Map.class)) {
-			Object[] twoKey = generateTwoObjForType(actualTypes[0]);
-			Object[] twoValue = generateTwoObjForType(actualTypes[1]);
+			Object[] twoKey = generateTwoObjForType(typeParameters[0]);
+			Object[] twoValue = generateTwoObjForType(typeParameters[1]);
 
 			Map<Object, Object> map = Maps.newHashMap();
 			map.put(twoKey[0], twoValue[0]);
@@ -114,45 +109,49 @@ public class ModelGenerateUtil {
 		return (T) doGenerateForUserClazz(clazz);
 	}
 
-	private static Object[] generateTwoObjForType(Type actualType) throws InstantiationException, IllegalAccessException {
+	private static Object[] generateTwoObjForType(Type actualType) {
 		Object[] objects = new Object[2];
 
 		if (actualType instanceof ParameterizedType) {
 			ParameterizedType parameterizedType = (ParameterizedType) actualType;
-			objects[0] = doGenerate((Class<?>) parameterizedType.getRawType(), parameterizedType.getActualTypeArguments(), null);
-			objects[1] = doGenerate((Class<?>) parameterizedType.getRawType(), parameterizedType.getActualTypeArguments(), null);
+			objects[0] = doGenerate((Class<?>) parameterizedType.getRawType(), null, parameterizedType.getActualTypeArguments());
+			objects[1] = doGenerate((Class<?>) parameterizedType.getRawType(), null, parameterizedType.getActualTypeArguments());
 		} else {
-			objects[0] = doGenerate((Class<?>) actualType, null, null);
-			objects[1] = doGenerate((Class<?>) actualType, null, null);
+			objects[0] = doGenerate((Class<?>) actualType, null, (Type) null);
+			objects[1] = doGenerate((Class<?>) actualType, null, (Type) null);
 		}
 
 		return objects;
 	}
 
-	public static <T> T doGenerateForUserClazz(Class<T> clazz) throws InstantiationException, IllegalAccessException {
-		// 默认构造方法构建对象
-		T model = clazz.newInstance();
+	public static <T> T doGenerateForUserClazz(Class<T> clazz) {
+		try {
+			// 默认构造方法构建对象
+			T model = clazz.newInstance();
 
-		// 获得属性，包括父类的
-		List<Field> declaredFields = getInheritedFields(clazz);
+			// 获得属性，包括父类的
+			List<Field> declaredFields = getInheritedFields(clazz);
 
-		// 获得方法，包括父类的
-		List<Method> declaredMethods = getInheritedMethods(clazz);
+			// 获得方法，包括父类的
+			List<Method> declaredMethods = getInheritedMethods(clazz);
 
-		// 遍历声明的属性，匹配set方法，设置属性的值
-		declaredFields.stream()
-				.filter(field -> !Modifier.isStatic(field.getModifiers()))
-				.filter(field -> !"serialVersionUID".equals(field.getName()))
-				.forEach(field -> {
-					Method setterMethod = findMatchedMethod(declaredMethods, field);
-					if (setterMethod == null) {
-						return;
-					}
+			// 遍历声明的属性，匹配set方法，设置属性的值
+			declaredFields.stream()
+					.filter(field -> !Modifier.isStatic(field.getModifiers()))
+					.filter(field -> !"serialVersionUID".equals(field.getName()))
+					.forEach(field -> {
+						Method setterMethod = findMatchedMethod(declaredMethods, field);
+						if (setterMethod == null) {
+							return;
+						}
 
-					fillValue(model, field, setterMethod);
-				});
+						fillValue(model, field, setterMethod);
+					});
 
-		return model;
+			return model;
+		} catch (Exception e) {
+			throw new RuntimeException("异常", e);
+		}
 	}
 
 	private static List<Field> getInheritedFields(Class<?> type) {
@@ -198,15 +197,15 @@ public class ModelGenerateUtil {
 		}
 	}
 
-	private static <T> T doGenerateForField(Field field) throws InstantiationException, IllegalAccessException {
+	private static <T> T doGenerateForField(Field field) {
 		// field上的泛化类型
 		Type genericType = field.getGenericType();
 
 		if (genericType instanceof ParameterizedType) {
 			ParameterizedType parameterizedType = (ParameterizedType) genericType;
-			return doGenerate(field.getType(), parameterizedType.getActualTypeArguments(), field.getName());
+			return doGenerate(field.getType(), field.getName(), parameterizedType.getActualTypeArguments());
 		} else {
-			return doGenerate(field.getType(), null, field.getName());
+			return doGenerate(field.getType(), field.getName(), (Type) null);
 		}
 	}
 
