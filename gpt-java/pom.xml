@@ -16,6 +16,13 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!--module-->
+        <dependency>
+            <groupId>com.gpengtao</groupId>
+            <artifactId>gpt-utils</artifactId>
+        </dependency>
+
+        <!--工具类-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -27,11 +34,6 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.gpengtao</groupId>
-            <artifactId>gpt-utils</artifactId>
         </dependency>
 
         <dependency>
