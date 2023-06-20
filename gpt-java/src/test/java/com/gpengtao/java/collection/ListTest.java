@@ -5,6 +5,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -59,5 +60,11 @@ public class ListTest {
 
 		System.out.println(list1);
 		System.out.println(list2);
+	}
+
+	@Test
+	public void test_as_list() {
+		List<String> list = Arrays.asList("hello", "world");
+		list.add("aaa");
 	}
 }
