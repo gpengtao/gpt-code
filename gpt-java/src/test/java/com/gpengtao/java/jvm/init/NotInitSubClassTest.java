@@ -1,4 +1,4 @@
-package com.gpengtao.java.init;
+package com.gpengtao.java.jvm.init;
 
 /**
  * 通过子类引用父类的静态字段,不会出发子类初始化

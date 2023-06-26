@@ -1,4 +1,4 @@
-package com.gpengtao.java.gc;
+package com.gpengtao.java.jvm.gc;
 
 import java.lang.ref.WeakReference;
 

@@ -1,4 +1,4 @@
-package com.gpengtao.java.init;
+package com.gpengtao.java.jvm.init;
 
 /**
  * 通过数组定义来引用来,不会出发此类的初始化

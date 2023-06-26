@@ -1,4 +1,4 @@
-package com.gpengtao.java.init;
+package com.gpengtao.java.jvm.init;
 
 /**
  * static final 常量在编译阶段会存入类的常量池,

@@ -1,4 +1,4 @@
-package com.gpengtao.java.gc;
+package com.gpengtao.java.jvm.gc;
 
 /**
  * -XX:+UseSerialGC -XX:SurvivorRatio=8 -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails

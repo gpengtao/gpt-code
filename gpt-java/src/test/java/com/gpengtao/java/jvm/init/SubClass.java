@@ -1,4 +1,4 @@
-package com.gpengtao.java.init;
+package com.gpengtao.java.jvm.init;
 
 /**
  * Created by gpengtao on 16/7/18.
