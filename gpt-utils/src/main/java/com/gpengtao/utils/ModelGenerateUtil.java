@@ -88,6 +88,17 @@ public class ModelGenerateUtil {
 			return (T) randomDate();
 		}
 
+		// 枚举类型
+		if (clazz.isEnum()) {
+			int a = 0;
+			Object[] enumConstants = clazz.getEnumConstants();
+			if (enumConstants.length > 0) {
+				return (T) enumConstants[0];
+			} else {
+				return null;
+			}
+		}
+
 		// List
 		if (clazz.isAssignableFrom(List.class) || clazz.isAssignableFrom(ArrayList.class)) {
 			Object[] twoObj = generateTwoObjForType(typeParameters[0]);
