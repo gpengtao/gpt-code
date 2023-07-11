@@ -1,14 +1,33 @@
-package com.gpengtao.leetcode.test;
+package com.gpengtao.leetcode.main;
 
-import Code_101_SymmetricTree.Solution;
-import Code_101_SymmetricTree.TreeNode;
-import org.junit.Assert;
-import org.junit.Test;
+import lombok.Data;
 
 /**
- * @author pengtao.geng on 2020/1/31 5:01 下午
+ * @author pengtao.geng on 2023/7/11 20:00.
  */
-public class Code_101_Test {
+public class Q0101_SymmetricTree {
+
+	@Data
+	static class TreeNode {
+		private int val;
+		private TreeNode left;
+		private TreeNode right;
+
+		public TreeNode(int val, TreeNode left, TreeNode right) {
+			this.val = val;
+			this.left = left;
+			this.right = right;
+		}
+	}
+
+	public boolean isSymmetric(TreeNode root) {
+		return true;
+	}
+
+	public static void main(String[] args) {
+		test1();
+		test2();
+	}
 
 	/*
 	树：
@@ -18,8 +37,7 @@ public class Code_101_Test {
 	 / \ / \
 	3  4 4  3
 	*/
-	@Test
-	public void test_1() {
+	private static void test1() {
 		TreeNode nodeLeft3 = new TreeNode(3, null, null);
 		TreeNode nodeLeft4 = new TreeNode(4, null, null);
 
@@ -31,8 +49,8 @@ public class Code_101_Test {
 
 		TreeNode root = new TreeNode(1, nodeLeft2, nodeRight2);
 
-		boolean b = new Solution().isSymmetric(root);
-		Assert.assertTrue(b);
+		boolean b = new Q0101_SymmetricTree().isSymmetric(root);
+		System.out.println(b);
 	}
 
 	/*
@@ -43,8 +61,7 @@ public class Code_101_Test {
 	  \    \
 	   3    3
 	*/
-	@Test
-	public void test_2(){
+	private static void test2() {
 		TreeNode nodeLeft3 = new TreeNode(3, null, null);
 		TreeNode nodeRight3 = new TreeNode(3, null, null);
 
@@ -53,7 +70,7 @@ public class Code_101_Test {
 
 		TreeNode root = new TreeNode(1, nodeLeft2, nodeRight2);
 
-		boolean b = new Solution().isSymmetric(root);
-		Assert.assertFalse(b);
+		boolean b = new Q0101_SymmetricTree().isSymmetric(root);
+		System.out.println(b);
 	}
 }

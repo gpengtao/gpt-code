@@ -43,7 +43,7 @@ public class Q0001_TwoSum_两数之和 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(new Q0001_TwoSum_两数之和().twoSum2(new int[]{2, 7, 11, 15}, 9)));
+		System.out.println(Arrays.toString(new Q0001_TwoSum_两数之和().twoSum(new int[]{2, 7, 11, 15}, 9)));
 		System.out.println(Arrays.toString(new Q0001_TwoSum_两数之和().twoSum2(new int[]{5, 2, 9, 1, 4}, 6)));
 	}
 }
