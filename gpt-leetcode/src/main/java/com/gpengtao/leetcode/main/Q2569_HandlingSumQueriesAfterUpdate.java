@@ -15,7 +15,9 @@ import java.util.Arrays;
  * <p>
  * <p>
  * <p>
- * 官方的解法是用线段树，线段树相关知识：<a href="https://zhuanlan.zhihu.com/p/174810030">...</a>
+ * 官方的解法是用线段树，线段树相关知识：
+ * <a href="https://zhuanlan.zhihu.com/p/174810030">...</a>
+ * <a href="https://leetcode.cn/circle/article/7voSQX/">...</a>
  *
  * @author pengtao.geng on 2023/7/26 20:07.
  */
