@@ -12,6 +12,10 @@ import java.util.Arrays;
  * 操作类型 3 为 queries[i] = [3, 0, 0] 。求 nums2 中所有元素的和。
  * 请你返回一个数组，包含所有第三种操作类型的答案。
  * <a href="https://leetcode.cn/problems/handling-sum-queries-after-update/description/">...</a>
+ * <p>
+ * <p>
+ * <p>
+ * 官方的解法是用线段树，线段树相关知识：<a href="https://zhuanlan.zhihu.com/p/174810030">...</a>
  *
  * @author pengtao.geng on 2023/7/26 20:07.
  */
