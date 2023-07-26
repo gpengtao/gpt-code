@@ -18,6 +18,13 @@ import java.util.Arrays;
 public class Q2569_HandlingSumQueriesAfterUpdate {
 
 	public long[] handleQuery(int[] nums1, int[] nums2, int[][] queries) {
+		// 构造long类型的数组2，防止num2数值溢出
+		long[] nums2222 = new long[nums2.length];
+		for (int i = 0; i < nums2.length; i++) {
+			nums2222[i] = nums2[i];
+		}
+
+		// 初始化结果数组
 		int size = 0;
 		for (int[] query : queries) {
 			if (query[0] == 3) {
@@ -27,38 +34,34 @@ public class Q2569_HandlingSumQueriesAfterUpdate {
 		long[] result = new long[size];
 		int current = 0;
 
+		// 处理
 		for (int[] query : queries) {
+			// 操作1
 			if (query[0] == 1) {
-				doOperate1(nums1, query[1], query[2]);
+				for (int i = query[1]; i <= query[2]; i++) {
+					if (nums1[i] == 1) {
+						nums1[i] = 0;
+					} else {
+						nums1[i] = 1;
+					}
+				}
 			}
-			if (query[0] == 2) {
-				doOperate2(nums1, nums2, query[1]);
+			// 操作2
+			else if (query[0] == 2) {
+				for (int i = 0; i < nums2222.length; i++) {
+					nums2222[i] = nums2222[i] + (long) nums1[i] * query[1];
+				}
 			}
-			if (query[0] == 3) {
+			// 操作3
+			else if (query[0] == 3) {
 				long sum = 0;
-				for (int num : nums2) {
+				for (long num : nums2222) {
 					sum += num;
 				}
 				result[current++] = sum;
 			}
 		}
 		return result;
-	}
-
-	private void doOperate2(int[] nums1, int[] nums2, int p) {
-		for (int i = 0; i < nums2.length; i++) {
-			nums2[i] = nums2[i] + nums1[i] * p;
-		}
-	}
-
-	private void doOperate1(int[] nums1, int left, int right) {
-		for (int i = left; i <= right; i++) {
-			if (nums1[i] == 1) {
-				nums1[i] = 0;
-			} else {
-				nums1[i] = 1;
-			}
-		}
 	}
 
 	public static void main(String[] args) {
