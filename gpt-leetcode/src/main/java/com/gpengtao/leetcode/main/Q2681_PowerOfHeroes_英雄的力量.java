@@ -36,8 +36,8 @@ public class Q2681_PowerOfHeroes_英雄的力量 {
 
 	public static void main(String[] args) {
 		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{1, 2}));
-//		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{2, 1, 4}));
-//		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{658, 489, 777, 2418, 1893, 130, 2448, 178, 1128, 2149, 1059, 1495, 1166, 608, 2006, 713, 1906, 2108, 680, 1348, 860, 1620, 146, 2447, 1895, 1083, 1465, 2351, 1359, 1187, 906, 533, 1943, 1814, 1808, 2065, 1744, 254, 1988, 1889, 1206}));
-//		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{1, 1, 1}));
+		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{1, 1, 1}));
+		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{2, 1, 4}));
+		System.out.println(new Q2681_PowerOfHeroes_英雄的力量().sumOfPower(new int[]{658, 489, 777, 2418, 1893, 130, 2448, 178, 1128, 2149, 1059, 1495, 1166, 608, 2006, 713, 1906, 2108, 680, 1348, 860, 1620, 146, 2447, 1895, 1083, 1465, 2351, 1359, 1187, 906, 533, 1943, 1814, 1808, 2065, 1744, 254, 1988, 1889, 1206}));
 	}
 }
