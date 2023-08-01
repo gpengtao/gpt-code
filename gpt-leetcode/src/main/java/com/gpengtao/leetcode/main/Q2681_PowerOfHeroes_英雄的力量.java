@@ -9,6 +9,35 @@ import java.util.Arrays;
  */
 public class Q2681_PowerOfHeroes_英雄的力量 {
 
+	public int sumOfPower2(int[] nums) {
+		Arrays.sort(nums);
+		long endInclusive = (long) Math.pow(2, nums.length) - 1;
+		long sum = 0;
+		for (long num = 1; num <= endInclusive; num++) {
+			long temp = num;
+			int minIdx = -1;
+			int maxIdx = -1;
+			int currentIdx = 0;
+			while (num > 0) {
+				long remainder = num % 2;
+				if (remainder > 0) {
+					if (minIdx == -1) {
+						minIdx = currentIdx;
+					}
+					maxIdx = currentIdx;
+				}
+//				System.out.println("余数 " + remainder);
+				num = num / 2;
+				currentIdx++;
+			}
+			int ret = nums[maxIdx] * nums[maxIdx] * nums[minIdx];
+//			System.out.println("数值 " + temp + " min下标 " + minIdx + " max下标 " + maxIdx + " 计算得到 " + ret + "\n");
+			sum += ret;
+		}
+
+		return (int) (sum % ((long) (Math.pow(10, 9)) + 7));
+	}
+
 	/**
 	 * 官方解答
 	 */
