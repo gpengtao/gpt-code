@@ -14,7 +14,7 @@ public class ClassLoaderTest2 {
 	 */
 	@Test
 	public void test_class_loader_bootstrp_load_which_class() {
-		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
+		URL[] urls = new URL[]{};
 		for (int i = 0; i < urls.length; i++) {
 			System.out.println(urls[i].toExternalForm());
 		}
@@ -23,7 +23,7 @@ public class ClassLoaderTest2 {
 	}
 
 	@Test
-	public void test(){
+	public void test() {
 		System.out.println(ClassLoader.getSystemClassLoader());
 	}
 }

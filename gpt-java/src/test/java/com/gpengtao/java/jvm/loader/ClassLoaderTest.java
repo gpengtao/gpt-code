@@ -91,7 +91,6 @@ public class ClassLoaderTest {
 
 	@Test
 	public void print_class_loader() {
-		System.out.println(sun.misc.PerfCounter.getParentDelegationTime().get());
 
 		// 这并不表示Integer这个类没有类加载器，而是它的加载器比较特殊，是BootstrapClassLoader，由于它不是Java类，因此获得它的引用肯定返回null。
 		System.out.println(Integer.class.getClassLoader());
@@ -103,7 +102,6 @@ public class ClassLoaderTest {
 
 		System.out.println(MyClass.class.getClassLoader().getParent().getParent());
 
-		System.out.println(sun.misc.PerfCounter.getParentDelegationTime().get());
 	}
 
 	@Test
