@@ -1,7 +1,7 @@
 package com.gpengtao.java.jvm.loader;
 
 import org.junit.Test;
-import sun.management.VMManagement;
+//import sun.management.VMManagement;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -133,24 +133,24 @@ public class ClassLoaderTest {
 		vmManagementField.setAccessible(true);
 
 		// 得到了ClassLoadingImpl里面的字段"jvm"，有了它我们可以得到class load花费的时间
-		VMManagement vm = (VMManagement) fields[0].get(mxBean);
-
-		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
-
-		TestLoadClass test = new TestLoadClass();
-
-		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
-
-		test.loadSomeClass();    // 第一次load耗时会长
-
-		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
-
-		test.loadSomeClass();    // class已经load过，执行很快
-
-		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
-
-		test.loadSomeClass();    // class已经load过，执行很快
-
-		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
+//		VMManagement vm = (VMManagement) fields[0].get(mxBean);
+//
+//		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
+//
+//		TestLoadClass test = new TestLoadClass();
+//
+//		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
+//
+//		test.loadSomeClass();    // 第一次load耗时会长
+//
+//		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
+//
+//		test.loadSomeClass();    // class已经load过，执行很快
+//
+//		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
+//
+//		test.loadSomeClass();    // class已经load过，执行很快
+//
+//		System.out.println("loaded class 数量:" + mxBean.getLoadedClassCount() + " time: " + vm.getClassLoadingTime());
 	}
 }
