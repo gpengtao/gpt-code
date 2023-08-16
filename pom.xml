@@ -40,6 +40,11 @@
                 <artifactId>gpt-leetcode</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.gpengtao</groupId>
+                <artifactId>gpt-learn</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <!--apache commons组件-->
             <dependency>

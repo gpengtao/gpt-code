@@ -1,4 +1,4 @@
-package com.gpengtao;
+package com.gpengtao.test.other;
 
 /**
  * Unit test for simple App.
