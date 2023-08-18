@@ -34,4 +34,4 @@ Thumbs.db
 catalina.base_IS_UNDEFINED/
 *.orig
 
-~
+.vscode
