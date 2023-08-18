@@ -1,2 +1,2 @@
 # gpt-doc
-good good study, day day up.
+形成自己的结构化的思维体系。
