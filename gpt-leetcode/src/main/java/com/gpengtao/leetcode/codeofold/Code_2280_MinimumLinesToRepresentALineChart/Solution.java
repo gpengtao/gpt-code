@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode.code.Code_2280_MinimumLinesToRepresentALineChart;
+package com.gpengtao.leetcode.codeofold.Code_2280_MinimumLinesToRepresentALineChart;
 
 /**
  * @author pengtao.geng on 2022/9/8 11:08.

@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode.code.LetterCasePermutation;
+package com.gpengtao.leetcode.codeofold.LetterCasePermutation;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode.code.LowestCommonAncestorOfABinaryTree;
+package com.gpengtao.leetcode.codeofold.LowestCommonAncestorOfABinaryTree;
 
 public class Solution {
 

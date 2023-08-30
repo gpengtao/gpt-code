@@ -1,6 +1,6 @@
 package com.gpengtao.leetcode.test;
 
-import com.gpengtao.leetcode.code.Code_459_RepeatedSubstringPattern.Solution;
+import com.gpengtao.leetcode.codeofold.Code_459_RepeatedSubstringPattern.Solution;
 import org.junit.Assert;
 import org.junit.Test;
 
