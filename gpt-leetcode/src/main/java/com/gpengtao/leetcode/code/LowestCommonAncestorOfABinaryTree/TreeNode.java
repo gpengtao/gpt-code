@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode.LowestCommonAncestorOfABinaryTree;
+package com.gpengtao.leetcode.code.LowestCommonAncestorOfABinaryTree;
 
 public class TreeNode {
 	private TreeNode left;

@@ -1,4 +1,4 @@
-package Code_459_RepeatedSubstringPattern;
+package com.gpengtao.leetcode.code.Code_459_RepeatedSubstringPattern;
 
 /**
  * @author pengtao.geng on 2020/1/31 4:10 下午

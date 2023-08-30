@@ -1,4 +1,4 @@
-package Code_209_MinimumSizeSubarraySum;
+package com.gpengtao.leetcode.code.Code_209_MinimumSizeSubarraySum;
 
 import java.util.Arrays;
 

@@ -1,6 +1,6 @@
 package com.gpengtao.leetcode.test;
 
-import Code_209_MinimumSizeSubarraySum.Solution;
+import com.gpengtao.leetcode.code.Code_209_MinimumSizeSubarraySum.Solution;
 import org.junit.Test;
 
 import java.util.Arrays;
