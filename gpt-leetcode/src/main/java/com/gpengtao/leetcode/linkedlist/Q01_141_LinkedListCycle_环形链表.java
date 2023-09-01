@@ -8,7 +8,7 @@ import java.util.Set;
  *
  * @author pengtao.geng on 2023/8/29 19:27.
  */
-public class Q0141_LinkedListCycle_环形链表 {
+public class Q01_141_LinkedListCycle_环形链表 {
 
 	/**
 	 * 解法1，用set标记遍历过的节点

@@ -1,8 +1,8 @@
 package com.gpengtao.leetcode.linkedlist;
 
-import java.util.Arrays;
+import com.gpengtao.leetcode.linkedlist.node.ListNode;
+
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -10,7 +10,7 @@ import java.util.Set;
  *
  * @author pengtao.geng on 2023/8/30 21:10.
  */
-public class Q0160_IntersectionOfTwoLinkedLists_相交链表 {
+public class Q03_160_IntersectionOfTwoLinkedLists_相交链表 {
 
 	/**
 	 * 解法1，用Set保存链表A，然后遍历B的节点看是否在Set中
@@ -77,41 +77,14 @@ public class Q0160_IntersectionOfTwoLinkedLists_相交链表 {
 		return a;
 	}
 
-	private static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-
-		@Override
-		public String toString() {
-			return "ListNode{" +
-					"val=" + val +
-					'}';
-		}
-	}
-
 	/**
 	 * 2 -> 6 -> 4    -> null -> 1 -> 5 -> null
 	 * 1 -> 5 -> null -> 2    -> 6 -> 4 -> null
 	 */
 	public static void main(String[] args) {
-		ListNode headA = buildLinK(2, 6, 4);
-		ListNode headB = buildLinK(1, 5);
-		ListNode ret = new Q0160_IntersectionOfTwoLinkedLists_相交链表().getIntersectionNode2_1(headA, headB);
+		ListNode headA = ListNode.buildLinK(2, 6, 4);
+		ListNode headB = ListNode.buildLinK(1, 5);
+		ListNode ret = new Q03_160_IntersectionOfTwoLinkedLists_相交链表().getIntersectionNode2_1(headA, headB);
 		System.out.println(ret);
-	}
-
-	private static ListNode buildLinK(int... num) {
-		List<ListNode> list = Arrays.stream(num)
-				.mapToObj(ListNode::new)
-				.toList();
-		for (int i = 0; i < list.size() - 1; i++) {
-			list.get(i).next = list.get(i + 1);
-		}
-		return list.get(0);
 	}
 }

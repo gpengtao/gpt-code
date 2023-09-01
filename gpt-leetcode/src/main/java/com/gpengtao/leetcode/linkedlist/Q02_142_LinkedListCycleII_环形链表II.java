@@ -8,7 +8,7 @@ import java.util.Set;
  *
  * @author pengtao.geng on 2023/8/29 20:05.
  */
-public class Q0142_LinkedListCycleII_环形链表II {
+public class Q02_142_LinkedListCycleII_环形链表II {
 
 	/**
 	 * 解法1，用set保存遍历过的节点，如果add时候存在了，则是出现环的位置
