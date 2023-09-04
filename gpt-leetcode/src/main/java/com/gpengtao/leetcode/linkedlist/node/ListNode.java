@@ -1,7 +1,9 @@
 package com.gpengtao.leetcode.linkedlist.node;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 ;
 
@@ -39,5 +41,21 @@ public class ListNode {
             list.get(i).next = list.get(i + 1);
         }
         return list.get(0);
+    }
+
+    public static void printList(ListNode listNode) {
+        if (listNode == null) {
+            System.out.println("null");
+            return;
+        }
+        List<Integer> list = new ArrayList<>();
+        while (listNode != null) {
+            list.add(listNode.val);
+            listNode = listNode.next;
+        }
+        String str = list.stream()
+                .map(Object::toString)
+                .collect(Collectors.joining("->"));
+        System.out.println(str);
     }
 }

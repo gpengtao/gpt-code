@@ -2,10 +2,6 @@ package com.gpengtao.leetcode.linkedlist;
 
 import com.gpengtao.leetcode.linkedlist.node.ListNode;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 /**
  * <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">...</a>
  *
@@ -74,27 +70,10 @@ public class Q04_19_RemoveNthNodeFromEndOfList_删除链表的倒数第N个结�
     public static void main(String[] args) {
         Q04_19_RemoveNthNodeFromEndOfList_删除链表的倒数第N个结点 solution = new Q04_19_RemoveNthNodeFromEndOfList_删除链表的倒数第N个结点();
 
-        printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2, 3), 2));
-        printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2), 1));
-        printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2, 3, 4, 5), 2));
-        printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2), 2));
-        printList(solution.removeNthFromEnd2(ListNode.buildLinK(1), 1));
+        ListNode.printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2, 3), 2));
+        ListNode.printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2), 1));
+        ListNode.printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2, 3, 4, 5), 2));
+        ListNode.printList(solution.removeNthFromEnd2(ListNode.buildLinK(1, 2), 2));
+        ListNode.printList(solution.removeNthFromEnd2(ListNode.buildLinK(1), 1));
     }
-
-    private static void printList(ListNode listNode) {
-        if (listNode == null) {
-            System.out.println("null");
-            return;
-        }
-        List<Integer> list = new ArrayList<>();
-        while (listNode != null) {
-            list.add(listNode.val);
-            listNode = listNode.next;
-        }
-        String str = list.stream()
-                .map(Object::toString)
-                .collect(Collectors.joining("->"));
-        System.out.println(str);
-    }
-
 }
