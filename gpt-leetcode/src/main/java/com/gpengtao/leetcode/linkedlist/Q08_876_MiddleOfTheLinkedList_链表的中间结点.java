@@ -9,7 +9,22 @@ import com.gpengtao.leetcode.linkedlist.node.ListNode;
  */
 public class Q08_876_MiddleOfTheLinkedList_链表的中间结点 {
 
+	/**
+	 * 解法，先遍历一遍得到链表长度，然后除以2得到中间节点的序号，再遍历到中间的序号即可
+	 */
 	public ListNode middleNode(ListNode head) {
-		return null;
+		ListNode p = head;
+		int length = 0;
+		while (p != null) {
+			p = p.next;
+			length++;
+		}
+
+		int middle = length / 2;
+		for (int i = 0; i < middle; i++) {
+			head = head.next;
+		}
+
+		return head;
 	}
 }
