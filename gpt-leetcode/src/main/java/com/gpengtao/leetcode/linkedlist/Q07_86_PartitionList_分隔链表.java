@@ -12,6 +12,9 @@ import static com.gpengtao.leetcode.linkedlist.node.ListNode.printList;
  */
 public class Q07_86_PartitionList_分隔链表 {
 
+	/**
+	 * 解法，定义两个新链表，遍历head，比 x 大的追到链表1，否则追到链表2，然后链表1连上链表2即是结果
+	 */
 	public ListNode partition(ListNode head, int x) {
 		ListNode list1 = new ListNode(-1);
 		ListNode list2 = new ListNode(-1);
