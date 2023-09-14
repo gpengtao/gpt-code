@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode.linkedlist;
+package com.gpengtao.leetcode.labuladong.linkedlist;
 
 import java.util.HashSet;
 import java.util.Set;

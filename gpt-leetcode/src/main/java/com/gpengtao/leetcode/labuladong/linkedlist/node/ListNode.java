@@ -1,4 +1,4 @@
-package com.gpengtao.leetcode.linkedlist.node;
+package com.gpengtao.leetcode.labuladong.linkedlist.node;
 
 import java.util.ArrayList;
 import java.util.Arrays;

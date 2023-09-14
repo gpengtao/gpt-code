@@ -1,12 +1,12 @@
-package com.gpengtao.leetcode.linkedlist;
+package com.gpengtao.leetcode.labuladong.linkedlist;
 
-import com.gpengtao.leetcode.linkedlist.node.ListNode;
+import com.gpengtao.leetcode.labuladong.linkedlist.node.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-import static com.gpengtao.leetcode.linkedlist.node.ListNode.buildLinK;
-import static com.gpengtao.leetcode.linkedlist.node.ListNode.printList;
+import static com.gpengtao.leetcode.labuladong.linkedlist.node.ListNode.buildLinK;
+import static com.gpengtao.leetcode.labuladong.linkedlist.node.ListNode.printList;
 
 /**
  * <a href="https://leetcode.cn/problems/merge-k-sorted-lists/">...</a>

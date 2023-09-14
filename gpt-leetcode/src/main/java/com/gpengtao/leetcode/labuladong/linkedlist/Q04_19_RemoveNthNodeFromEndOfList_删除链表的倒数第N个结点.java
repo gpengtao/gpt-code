@@ -1,6 +1,6 @@
-package com.gpengtao.leetcode.linkedlist;
+package com.gpengtao.leetcode.labuladong.linkedlist;
 
-import com.gpengtao.leetcode.linkedlist.node.ListNode;
+import com.gpengtao.leetcode.labuladong.linkedlist.node.ListNode;
 
 /**
  * <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">...</a>
