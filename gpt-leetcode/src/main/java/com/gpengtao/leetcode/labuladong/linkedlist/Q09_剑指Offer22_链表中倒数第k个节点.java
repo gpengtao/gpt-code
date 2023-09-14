@@ -9,6 +9,7 @@ import static com.gpengtao.leetcode.labuladong.linkedlist.node.ListNode.printLis
  * <a href="https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">...</a>
  *
  * @author pengtao.geng on 2023/9/14 09:42.
+ * @see Q04_19_RemoveNthNodeFromEndOfList_删除链表的倒数第N个结点
  */
 public class Q09_剑指Offer22_链表中倒数第k个节点 {
 
