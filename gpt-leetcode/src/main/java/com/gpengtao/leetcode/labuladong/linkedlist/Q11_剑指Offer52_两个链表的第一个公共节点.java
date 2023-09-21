@@ -11,6 +11,7 @@ import com.gpengtao.leetcode.labuladong.linkedlist.node.ListNode;
 public class Q11_剑指Offer52_两个链表的第一个公共节点 {
 
 	ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		// 相同
 		return null;
 	}
 }
