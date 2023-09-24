@@ -5,7 +5,7 @@ package com.gpengtao.leetcode.labuladong.list;
  *
  * @author pengtao.geng on 2023/9/21 20:55.
  */
-public class Q01_167_两数之和II_输入有序数组 {
+public class Q01_167_TwoSumII_InputArrayIsSorted_两数之和II_输入有序数组 {
 
 	/**
 	 * 解法1，两层for循环，暴力求解
