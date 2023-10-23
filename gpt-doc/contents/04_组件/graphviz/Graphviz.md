@@ -4,5 +4,8 @@ Graphviz（Graph Visualization Software）是一个开源的图形可视化软�
 ## mac安装graphviz
 brew install graphviz
 
+## doc命令
+dot -Tpng example.dot -o example.png
+
 ## 一小时实践入门 Graphviz
 https://zhuanlan.zhihu.com/p/644358139
