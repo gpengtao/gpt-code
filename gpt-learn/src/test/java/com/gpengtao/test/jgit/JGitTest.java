@@ -10,6 +10,7 @@ import org.eclipse.jgit.util.FileUtils;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.Base64;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,14 +19,16 @@ import java.util.Objects;
  */
 public class JGitTest {
 
-	File gitFile = new File("./temp");
+	File gitFile = new File("./target/gitTemp");
 
-	UsernamePasswordCredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("pengtao.geng", "Geng1111.");
+	UsernamePasswordCredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("pengtao.geng", new String(Base64.getDecoder().decode("R2VuZzExMTEu")));
 
 	@SneakyThrows
 	@Test
-	public void test() {
-		FileUtils.delete(gitFile, FileUtils.RECURSIVE);
+	public void test_clone() {
+		if (gitFile.exists()) {
+			FileUtils.delete(gitFile, FileUtils.RECURSIVE);
+		}
 
 		// clone 仓库到指定目录
 		Git git = Git.cloneRepository()
@@ -33,7 +36,11 @@ public class JGitTest {
 				.setDirectory(gitFile)
 				.setCredentialsProvider(credentialsProvider)
 				.call();
-		git.pull();
+
+		// pull
+		git.pull().setCredentialsProvider(credentialsProvider).call();
+
+		git.close();
 	}
 
 	@SneakyThrows
