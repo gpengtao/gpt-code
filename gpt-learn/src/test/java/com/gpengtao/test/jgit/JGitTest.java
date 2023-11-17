@@ -62,4 +62,17 @@ public class JGitTest {
 				.filter(ref -> Objects.equals(ref.getPeeledObjectId().toObjectId(), targetObjectId))
 				.forEach(ref -> System.out.println(ref.getName()));
 	}
+
+	@SneakyThrows
+	@Test
+	public void test_file() {
+		File file = new File("./target/11");
+		System.out.println(file.exists());
+		System.out.println(file.isDirectory());
+
+		String tempDir = System.getenv("java.io.tmpdir");
+		System.out.println(tempDir);
+		File temp = File.createTempFile("aaa", ".temp", new File("./target"));
+		System.out.println(temp);
+	}
 }
