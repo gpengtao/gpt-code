@@ -1,12 +1,13 @@
 // ==UserScript==
-// @name         下载bing背景图片
+// @name         下载bing背景图片2
 // @namespace    http://tampermonkey.net/
 // @version      2024-01-17
 // @description  try to take over the world!
 // @author       gpengtao
 // @match        https://cn.bing.com/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=https://cn.bing.com/
-// @grant        none
+// @grant        GM_download
+// @grant        unsafeWindow
 // ==/UserScript==
 
 (function () {
@@ -37,23 +38,12 @@
     // 下载图片的文件名字
     let img_file_name = 'bing-' + date + '-' + download_url.split('id=')[1];
 
-    // 下载
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', download_url, true);
-    xhr.responseType = 'blob';
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-            // 获取文件blob数据
-            const export_blob = new Blob([xhr.response]);
-
-            // 创建a对象。
-            const save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-            save_link.href = window.URL.createObjectURL(export_blob);
-            save_link.download = img_file_name;
-            save_link.click();
-        }
-    };
-    xhr.send();
+    // 下载图片
+    GM_download({
+        url: download_url,
+        name: img_file_name,
+        saveAs: true
+    });
 
     // 记录已下载过
     localStorage.setItem(key, date)
