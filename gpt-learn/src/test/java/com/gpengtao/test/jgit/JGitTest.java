@@ -32,7 +32,7 @@ public class JGitTest {
 
 		// clone 仓库到指定目录
 		Git git = Git.cloneRepository()
-				.setURI("https://git.corp.bianlifeng.com/smart-order/smartorder-strategy-engine.git")
+				.setURI("https://git.corp.xxx.com/xx-order/xx-xx-xx.git")
 				.setDirectory(gitFile)
 				.setCredentialsProvider(credentialsProvider)
 				.call();
