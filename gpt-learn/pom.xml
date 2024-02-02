@@ -27,6 +27,7 @@
             <version>6.6.0.202305301015-r</version>
         </dependency>
 
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
