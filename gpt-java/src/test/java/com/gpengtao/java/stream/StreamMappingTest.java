@@ -42,16 +42,19 @@ public class StreamMappingTest {
 		return new Score(0, "from init");
 	}
 
+	// 此写法会导致分组计算错误
 	private static Score sumToLeft(Score left, Score right) {
 		left.setScore(left.getScore() + right.getScore());
 		return left;
 	}
 
+	// ok，巧合了
 	private static Score sumToRight(Score a, Score b) {
 		b.setScore(a.getScore() + b.getScore());
 		return b;
 	}
 
+	// ok，新对象，类似不可变对象的运算
 	private static Score sumToNew(Score a, Score b) {
 		int sum = a.getScore() + b.getScore();
 		return new Score(sum, "from sum");
@@ -66,7 +69,7 @@ public class StreamMappingTest {
 						PersonScoreRecord::getName,
 						Collectors.mapping(
 								PersonScoreRecord::getScore,
-								Collectors.reducing(initScore(), StreamMappingTest::sumToRight)
+								Collectors.reducing(initScore(), StreamMappingTest::sumToLeft)
 						)));
 		System.out.println("result1，错误: " + result2);
 
