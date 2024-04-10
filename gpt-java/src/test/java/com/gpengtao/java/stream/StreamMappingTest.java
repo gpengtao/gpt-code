@@ -33,44 +33,42 @@ public class StreamMappingTest {
 	private static class Score {
 
 		private Integer score;
+		private String mark;
 
-		public static Score sum(Score a, Score b) {
-			a.setScore(a.getScore() + b.getScore());
-			return a;
-		}
 
-		public static Score init() {
-			return new Score(0);
-		}
 	}
 
+	private static Score initScore() {
+		return new Score(0, "from init");
+	}
 
-	/**
-	 * 测试stream
-	 */
+	private static Score sumToLeft(Score left, Score right) {
+		left.setScore(left.getScore() + right.getScore());
+		return left;
+	}
+
+	private static Score sumToRight(Score a, Score b) {
+		b.setScore(a.getScore() + b.getScore());
+		return b;
+	}
+
+	private static Score sumToNew(Score a, Score b) {
+		int sum = a.getScore() + b.getScore();
+		return new Score(sum, "from sum");
+	}
+
 	@Test
 	public void test_groupBy_mappingReducing() {
-		// ok
-		Map<String, Score> result1 = buildRecords().stream()
-				.collect(Collectors.groupingBy(
-						PersonScoreRecord::getName,
-						Collectors.collectingAndThen(
-								Collectors.toList(),
-								list -> list.stream()
-										.map(PersonScoreRecord::getScore)
-										.reduce(Score.init(), Score::sum)
-						)));
-		System.out.println("result1，对的: " + result1);
-
 		// 此写法错误
-		Map<String, Score> result2 = buildRecords().stream()
+		List<PersonScoreRecord> records2 = buildRecords();
+		Map<String, Score> result2 = records2.stream()
 				.collect(Collectors.groupingBy(
 						PersonScoreRecord::getName,
 						Collectors.mapping(
 								PersonScoreRecord::getScore,
-								Collectors.reducing(Score.init(), Score::sum)
+								Collectors.reducing(initScore(), StreamMappingTest::sumToRight)
 						)));
-		System.out.println("result2，错误: " + result2);
+		System.out.println("result1，错误: " + result2);
 
 		// ok
 		Map<String, Integer> result3 = buildRecords().stream()
@@ -80,21 +78,33 @@ public class StreamMappingTest {
 								record -> record.getScore().getScore(),
 								Collectors.reducing(0, Integer::sum)
 						)));
-		System.out.println("result3，对的: " + result3);
+		System.out.println("result2，对的: " + result3);
+
+		// ok
+		Map<String, Score> result1 = buildRecords().stream()
+				.collect(Collectors.groupingBy(
+						PersonScoreRecord::getName,
+						Collectors.collectingAndThen(
+								Collectors.toList(),
+								list -> list.stream()
+										.map(PersonScoreRecord::getScore)
+										.reduce(initScore(), StreamMappingTest::sumToRight)
+						)));
+		System.out.println("result3，对的: " + result1);
 	}
 
 	private static List<PersonScoreRecord> buildRecords() {
 		PersonScoreRecord record1 = new PersonScoreRecord();
 		record1.setName("a");
-		record1.setScore(new Score(10));
+		record1.setScore(new Score(10, "from a1"));
 
 		PersonScoreRecord record2 = new PersonScoreRecord();
 		record2.setName("a");
-		record2.setScore(new Score(10));
+		record2.setScore(new Score(10, "from a2"));
 
 		PersonScoreRecord record3 = new PersonScoreRecord();
 		record3.setName("b");
-		record3.setScore(new Score(10));
+		record3.setScore(new Score(10, "from b"));
 
 		return Lists.newArrayList(record1, record2, record3);
 	}
