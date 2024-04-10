@@ -62,7 +62,7 @@ public class StreamMappingTest {
 
 	@Test
 	public void test_groupBy_mappingReducing() {
-		// 此写法错误，原因：reducing的默认值只会执行一次，后续会用于各个分组的运算
+		// 此写法错误，原因：reducing的默认值只会执行一次初始化，后续会用于各个分组的运算
 		List<PersonScoreRecord> records2 = buildRecords();
 		Map<String, Score> result2 = records2.stream()
 				.collect(Collectors.groupingBy(
