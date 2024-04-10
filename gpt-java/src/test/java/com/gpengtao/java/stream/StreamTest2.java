@@ -38,35 +38,35 @@ public class StreamTest2 {
 
 		// ok
 		Map<String, Score> result1 = Lists.newArrayList(bo1, bo2, bo3).stream()
-				.collect(Collectors.groupingBy(Bo::getName,
+				.collect(Collectors.groupingBy(
+						Bo::getName,
 						Collectors.collectingAndThen(
 								Collectors.toList(),
 								list -> list.stream()
 										.map(Bo::getScore)
 										.reduce(Score.init(), Score::sum)
 						)));
-		System.out.println("result1: " + result1);
+		System.out.println("result1，对的: " + result1);
 
 		// 此写法错误
 		Map<String, Score> result2 = Lists.newArrayList(bo1, bo2, bo3).stream()
-				.collect(Collectors.groupingBy(Bo::getName,
+				.collect(Collectors.groupingBy(
+						Bo::getName,
 						Collectors.mapping(
 								Bo::getScore,
-								Collectors.reducing(Score.init(), (a, b) -> {
-									System.out.println("2222");
-									return Score.sum(a, b);
-								})
+								Collectors.reducing(Score.init(), Score::sum)
 						)));
-		System.out.println("result2: " + result2);
+		System.out.println("result2，错误: " + result2);
 
 		// ok
 		Map<String, Integer> result3 = Lists.newArrayList(bo1, bo2, bo3).stream()
-				.collect(Collectors.groupingBy(Bo::getName,
+				.collect(Collectors.groupingBy(
+						Bo::getName,
 						Collectors.mapping(
 								bo -> bo.getScore().getScore(),
 								Collectors.reducing(0, Integer::sum)
 						)));
-		System.out.println("result3: " + result3);
+		System.out.println("result3，对的: " + result3);
 	}
 
 	@Test
