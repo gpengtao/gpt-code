@@ -1,7 +1,7 @@
 package com.gpengtao.java.stream;
 
 import com.google.common.collect.Lists;
-import com.gpengtao.java.stream.model.Bo;
+import com.gpengtao.java.stream.model.PersonScoreRecord;
 import com.gpengtao.java.stream.model.Score;
 import lombok.Builder;
 import lombok.Data;
@@ -24,49 +24,53 @@ public class StreamTest2 {
 	 */
 	@Test
 	public void test_groupBy_mappingReducing() {
-		Bo bo1 = new Bo();
-		bo1.setName("a");
-		bo1.setScore(new Score(10));
-
-		Bo bo2 = new Bo();
-		bo2.setName("a");
-		bo2.setScore(new Score(10));
-
-		Bo bo3 = new Bo();
-		bo3.setName("b");
-		bo3.setScore(new Score(10));
-
 		// ok
-		Map<String, Score> result1 = Lists.newArrayList(bo1, bo2, bo3).stream()
+		Map<String, Score> result1 = getBuildRecords().stream()
 				.collect(Collectors.groupingBy(
-						Bo::getName,
+						PersonScoreRecord::getName,
 						Collectors.collectingAndThen(
 								Collectors.toList(),
 								list -> list.stream()
-										.map(Bo::getScore)
+										.map(PersonScoreRecord::getScore)
 										.reduce(Score.init(), Score::sum)
 						)));
 		System.out.println("result1，对的: " + result1);
 
 		// 此写法错误
-		Map<String, Score> result2 = Lists.newArrayList(bo1, bo2, bo3).stream()
+		Map<String, Score> result2 = getBuildRecords().stream()
 				.collect(Collectors.groupingBy(
-						Bo::getName,
+						PersonScoreRecord::getName,
 						Collectors.mapping(
-								Bo::getScore,
+								PersonScoreRecord::getScore,
 								Collectors.reducing(Score.init(), Score::sum)
 						)));
 		System.out.println("result2，错误: " + result2);
 
 		// ok
-		Map<String, Integer> result3 = Lists.newArrayList(bo1, bo2, bo3).stream()
+		Map<String, Integer> result3 = getBuildRecords().stream()
 				.collect(Collectors.groupingBy(
-						Bo::getName,
+						PersonScoreRecord::getName,
 						Collectors.mapping(
-								bo -> bo.getScore().getScore(),
+								record -> record.getScore().getScore(),
 								Collectors.reducing(0, Integer::sum)
 						)));
 		System.out.println("result3，对的: " + result3);
+	}
+
+	private static List<PersonScoreRecord> getBuildRecords() {
+		PersonScoreRecord record1 = new PersonScoreRecord();
+		record1.setName("a");
+		record1.setScore(new Score(10));
+
+		PersonScoreRecord record2 = new PersonScoreRecord();
+		record2.setName("a");
+		record2.setScore(new Score(10));
+
+		PersonScoreRecord record3 = new PersonScoreRecord();
+		record3.setName("b");
+		record3.setScore(new Score(10));
+
+		return Lists.newArrayList(record1, record2, record3);
 	}
 
 	@Test

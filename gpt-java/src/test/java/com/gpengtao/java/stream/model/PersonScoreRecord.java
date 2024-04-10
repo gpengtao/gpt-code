@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Bo {
+public class PersonScoreRecord {
 	private String name;
 	private Score score;
 	private Integer age;
