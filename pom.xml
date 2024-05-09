@@ -13,6 +13,7 @@
         <module>gpt-java</module>
         <module>gpt-utils</module>
         <module>gpt-learn</module>
+        <module>gpt-scala</module>
     </modules>
 
     <properties>

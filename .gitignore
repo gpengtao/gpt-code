@@ -37,3 +37,6 @@ catalina.base_IS_UNDEFINED/
 .vscode
 
 .temp
+
+*.class
+*.tasty
