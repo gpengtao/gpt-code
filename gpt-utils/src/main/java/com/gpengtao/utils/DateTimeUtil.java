@@ -2,6 +2,7 @@ package com.gpengtao.utils;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 
+import java.time.Duration;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -48,5 +49,8 @@ public class DateTimeUtil {
 		return desc;
 	}
 
-
+	public static void main(String[] args) {
+		Duration.of()
+		System.out.println(secondHumanDesc());
+	}
 }
