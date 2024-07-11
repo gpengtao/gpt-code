@@ -2,7 +2,6 @@ package com.gpengtao.utils;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 
-import java.time.Duration;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +19,8 @@ public class DateTimeUtil {
 	 * 日期时间格式化形式 "yyyy-MM-dd HH:mm:ss"
 	 */
 	public static final FastDateFormat DATE_FORMAT_yyyy_MM_dd_HH_mm_ss = FastDateFormat.getInstance(yyyy_MM_dd_HH_mm_ss);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * 日期时间转换为"yyyy-MM-dd HH:mm:ss"字符串
@@ -47,10 +48,5 @@ public class DateTimeUtil {
 			desc += second + "秒";
 		}
 		return desc;
-	}
-
-	public static void main(String[] args) {
-		Duration.of()
-		System.out.println(secondHumanDesc());
 	}
 }
