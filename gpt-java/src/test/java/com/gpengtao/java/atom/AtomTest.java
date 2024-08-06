@@ -2,8 +2,7 @@ package com.gpengtao.java.atom;
 
 import com.gpengtao.java.model.Person;
 import org.junit.Test;
-import sun.misc
-		.Unsafe;
+import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -55,5 +54,16 @@ public class AtomTest {
 		System.out.println(aLong);
 		System.out.println(aLong.incrementAndGet());
 		System.out.println(aLong.incrementAndGet());
+	}
+
+	@Test
+	public void test_add() {
+		AtomicInteger num = new AtomicInteger(0);
+		functionAdd(num);
+		System.out.println(num);
+	}
+
+	private void functionAdd(AtomicInteger num) {
+		num.addAndGet(1000);
 	}
 }
