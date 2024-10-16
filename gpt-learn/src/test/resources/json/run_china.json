@@ -1,0 +1,285 @@
+{
+  "success": true,
+  "code": 0,
+  "msg": "SUCCESS",
+  "data": {
+    "results": [
+      {
+        "raceId": 1000193005,
+        "raceName": "迎新仙岛岱山半程马拉松赛",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-12-21",
+        "raceAddress": "浙江省/舟山市/岱山县",
+        "raceItem": "[\"半程\"]",
+        "raceScale": "200人"
+      },
+      {
+        "raceId": 1000162072,
+        "raceName": "2024江门马拉松赛",
+        "raceGrade": "B",
+        "raceTime": "2024-12-15",
+        "raceAddress": "广东省/江门市/",
+        "raceItem": "[\"全程\",\"半程\",\"7公里\"]",
+        "raceScale": "20000人"
+      },
+      {
+        "raceId": 1000191003,
+        "raceName": "2024桐乡半程马拉松赛",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-12-08",
+        "raceAddress": "浙江省/嘉兴市/桐乡市",
+        "raceItem": "[\"半程\"]",
+        "raceScale": "5000人"
+      },
+      {
+        "raceId": 1000142117,
+        "raceName": "2024惠州市惠城区汝湖镇乡村半程马拉松",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-12-08",
+        "raceAddress": "广东省/惠州市/惠城区",
+        "raceItem": "[\"半程\",\"5公里\"]",
+        "raceScale": "2500人"
+      },
+      {
+        "raceId": 1000208005,
+        "raceName": "2024 婺源马拉松赛",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-12-01",
+        "raceAddress": "江西省/上饶市/婺源县",
+        "raceItem": "[\"全程\",\"半程\",\"5公里\"]",
+        "raceScale": "15000人"
+      },
+      {
+        "raceId": 1000207004,
+        "raceName": "2024台州马拉松",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-12-01",
+        "raceAddress": "浙江省/台州市/黄岩区",
+        "raceItem": "[\"全程\",\"半程\",\"5公里\"]",
+        "raceScale": "15000人"
+      },
+      {
+        "raceId": 1000162065,
+        "raceName": "2024千岛湖马拉松",
+        "raceGrade": "B",
+        "raceTime": "2024-12-01",
+        "raceAddress": "浙江省/杭州市/淳安县",
+        "raceItem": "[\"全程\",\"半程\",\"8.8公里\"]",
+        "raceScale": "15000人"
+      },
+      {
+        "raceId": 1000145053,
+        "raceName": "第十六届南宁马拉松比赛暨第三十九届南宁解放日长跑活动",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-12-01",
+        "raceAddress": "广西壮族自治区/南宁市/青秀区",
+        "raceItem": "[\"全程\",\"半程\",\"10公里\",\"4公里\",\"2公里\"]",
+        "raceScale": "30000人"
+      },
+      {
+        "raceId": 1000143132,
+        "raceName": "2024兴安灵渠半程马拉松",
+        "raceGrade": "B",
+        "raceTime": "2024-12-01",
+        "raceAddress": "广西壮族自治区/桂林市/兴安县",
+        "raceItem": "[\"半程\",\"4公里\"]",
+        "raceScale": "6500人"
+      },
+      {
+        "raceId": 1000142091,
+        "raceName": "2024特步晋江马拉松赛",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-12-01",
+        "raceAddress": "福建省/泉州市/晋江市",
+        "raceItem": "[\"全程\",\"半程\",\"8公里\"]",
+        "raceScale": "20000人"
+      },
+      {
+        "raceId": 1000145042,
+        "raceName": "2024中国田径协会10公里精英赛（重庆站）暨重庆10公里挑战赛",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-30",
+        "raceAddress": "重庆市/重庆市/南岸区",
+        "raceItem": "[\"10公里\",\"3.5公里\"]",
+        "raceScale": "10000人"
+      },
+      {
+        "raceId": 1000180000,
+        "raceName": "2024舟山群岛马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-24",
+        "raceAddress": "浙江省/舟山市/",
+        "raceItem": "[\"全程\",\"半程\",\"5公里\"]",
+        "raceScale": "15000人"
+      },
+      {
+        "raceId": 1000145123,
+        "raceName": "2024肇庆马拉松",
+        "raceGrade": "B",
+        "raceTime": "2024-11-24",
+        "raceAddress": "广东省/肇庆市/端州区",
+        "raceItem": "[\"全程\",\"半程\",\"8公里\"]",
+        "raceScale": "23000人"
+      },
+      {
+        "raceId": 1000145122,
+        "raceName": "2024罗城半程马拉松",
+        "raceGrade": "B",
+        "raceTime": "2024-11-24",
+        "raceAddress": "广西壮族自治区/河池市/罗城仫佬族自治县",
+        "raceItem": "[\"半程\",\"5.6公里\"]",
+        "raceScale": "6000人"
+      },
+      {
+        "raceId": 1000145107,
+        "raceName": "第二届奉贤海湾森林半程马拉松赛",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-11-24",
+        "raceAddress": "上海市/上海市/奉贤区",
+        "raceItem": "[\"半程\"]",
+        "raceScale": "4000人"
+      },
+      {
+        "raceId": 1000143133,
+        "raceName": "德文厦门工学院马拉松2024秋季赛",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-11-24",
+        "raceAddress": "福建省/厦门市/集美区",
+        "raceItem": "[\"全程\",\"半程\",\"10公里\"]",
+        "raceScale": "4000人"
+      },
+      {
+        "raceId": 1000143098,
+        "raceName": "2024惠东巽寮湾滨海旅游度假区半程马拉松",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-11-24",
+        "raceAddress": "广东省/惠州市/惠东县",
+        "raceItem": "[\"半程\",\"5公里\"]",
+        "raceScale": "9000人"
+      },
+      {
+        "raceId": 1000194007,
+        "raceName": "2024佛山高明稻田马拉松",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-11-17",
+        "raceAddress": "广东省/佛山市/高明区",
+        "raceItem": "[\"全程\",\"半程\",\"5公里\"]",
+        "raceScale": "11000人"
+      },
+      {
+        "raceId": 1000177001,
+        "raceName": "2024南京马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-17",
+        "raceAddress": "江苏省/南京市/",
+        "raceItem": "[\"全程\",\"4公里\"]",
+        "raceScale": "30000人"
+      },
+      {
+        "raceId": 1000169000,
+        "raceName": "2024铜陵半程马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-17",
+        "raceAddress": "安徽省/铜陵市/铜官区",
+        "raceItem": "[\"半程\",\"10公里\",\"5公里\"]",
+        "raceScale": "13500人"
+      },
+      {
+        "raceId": 1000167001,
+        "raceName": "2024澄迈半程马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-17",
+        "raceAddress": "海南省/省直辖县级行政区划/澄迈县",
+        "raceItem": "[\"半程\",\"5公里\"]",
+        "raceScale": "10000人"
+      },
+      {
+        "raceId": 1000162029,
+        "raceName": "2024三门峡马拉松",
+        "raceGrade": "B",
+        "raceTime": "2024-11-17",
+        "raceAddress": "河南省/三门峡市/湖滨区",
+        "raceItem": "[\"全程\",\"半程\",\"5公里\"]",
+        "raceScale": "12000人"
+      },
+      {
+        "raceId": 1000145104,
+        "raceName": "2024湖北石首半程马拉松暨长江系列赛",
+        "raceGrade": "B",
+        "raceTime": "2024-11-17",
+        "raceAddress": "湖北省/荆州市/石首市",
+        "raceItem": "[\"半程\",\"5公里\"]",
+        "raceScale": "10000人"
+      },
+      {
+        "raceId": 1000145061,
+        "raceName": "2024太仓中德半程马拉松",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-11-17",
+        "raceAddress": "江苏省/苏州市/太仓市",
+        "raceItem": "[\"半程\",\"4.6公里\"]",
+        "raceScale": "12000人"
+      },
+      {
+        "raceId": 1000143084,
+        "raceName": "2024云浮新兴半程马拉松",
+        "raceGrade": "B",
+        "raceTime": "2024-11-17",
+        "raceAddress": "广东省/云浮市/新兴县",
+        "raceItem": "[\"半程\",\"6.6公里\"]",
+        "raceScale": "15000人"
+      },
+      {
+        "raceId": 1000143077,
+        "raceName": "2024湖州马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-17",
+        "raceAddress": "浙江省/湖州市/长兴县",
+        "raceItem": "[\"全程\",\"半程\",\"10公里\",\"3.5公里\"]",
+        "raceScale": "15000人"
+      },
+      {
+        "raceId": 1000142089,
+        "raceName": "2024光谷马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-17",
+        "raceAddress": "湖北省/武汉市/",
+        "raceItem": "[\"全程\",\"半程\",\"13公里\",\"1.6公里\"]",
+        "raceScale": "20296人"
+      },
+      {
+        "raceId": 1000192014,
+        "raceName": "2024湖北大冶半程马拉松",
+        "raceGrade": "C（属地办赛）",
+        "raceTime": "2024-11-16",
+        "raceAddress": "湖北省/黄石市/大冶市",
+        "raceItem": "[\"半程\",\"9公里\",\"3公里\",\"3公里\"]",
+        "raceScale": "20000人"
+      },
+      {
+        "raceId": 1000167000,
+        "raceName": "2024中国田径协会10公里精英赛·揭西棉湖站",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-10",
+        "raceAddress": "广东省/揭阳市/揭西县",
+        "raceItem": "[\"10公里\",\"3.5公里\"]",
+        "raceScale": "4000人"
+      },
+      {
+        "raceId": 1000162022,
+        "raceName": "2024南昌马拉松",
+        "raceGrade": "A (A1)",
+        "raceTime": "2024-11-10",
+        "raceAddress": "江西省/南昌市/",
+        "raceItem": "[\"全程\",\"半程\",\"5公里\"]",
+        "raceScale": "35000人"
+      }
+    ],
+    "pageNo": 1,
+    "pageSize": 30,
+    "pageCount": 63,
+    "totalCount": 1874,
+    "searchAfterFlag": false,
+    "lastSortMap": null
+  }
+}

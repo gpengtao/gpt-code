@@ -1,5 +1,6 @@
 package com.gpengtao.utils;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
@@ -13,7 +14,12 @@ import java.util.List;
  */
 public class JsonUtil {
 
-	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+	private static final ObjectMapper OBJECT_MAPPER;
+
+	static {
+		OBJECT_MAPPER = new ObjectMapper();
+		OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+	}
 
 	@SneakyThrows
 	public static String toJson(Object obj) {
@@ -21,6 +27,14 @@ public class JsonUtil {
 			return null;
 		}
 		return OBJECT_MAPPER.writeValueAsString(obj);
+	}
+
+	@SneakyThrows
+	public static <T> T of(String json, Class<T> tClass) {
+		if (Strings.isNullOrEmpty(json)) {
+			return null;
+		}
+		return OBJECT_MAPPER.readValue(json, tClass);
 	}
 
 	@SneakyThrows
