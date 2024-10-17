@@ -70,6 +70,7 @@ public class RunChinaTest {
 				|-|-|-|-|-|-|
 				""";
 		String rows = allRaces.stream()
+				.limit(20)
 				.map(RunChinaTest::toRaceTableRow)
 				.collect(Collectors.joining("\n"));
 		String result = title + rows;
@@ -80,15 +81,17 @@ public class RunChinaTest {
 		// |开赛时间|比赛名称|赛事等级|比赛地点|比赛项目|赛事规模|
 		String raceName = String.format("[%s](https://www.runchina.org.cn/#/race/v/detail/%s \"%s\")", race.getRaceName(), race.getRaceId(), race.getRaceName());
 		List<String> item = StringUtils.isEmpty(race.getRaceItem()) ? Lists.newArrayList() : JsonUtil.ofList(race.getRaceItem(), String.class);
-		return String.join("|", Lists.newArrayList(
-				race.getRaceTime(),
-				raceName,
-				race.getRaceAddress(),
-				race.getRaceGrade(),
-				String.join("、", Objects.requireNonNull(item)),
-				Strings.nullToEmpty(race.getRaceScale()),
-				race.getRaceId()
-		));
+		String content = String.join("|",
+				Lists.newArrayList(
+						race.getRaceTime(),
+						raceName,
+						race.getRaceAddress(),
+						race.getRaceGrade(),
+						String.join("、", Objects.requireNonNull(item)),
+						Strings.nullToEmpty(race.getRaceScale()),
+						race.getRaceId()
+				));
+		return "|" + content + "|";
 	}
 
 	@Data
