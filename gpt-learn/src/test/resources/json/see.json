@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "code": 0,
+  "msg": "SUCCESS",
+  "data": {
+    "type": "SS",
+    "ssdetails": {
+      "pkId": null,
+      "name": "迎新仙岛岱山半程马拉松赛",
+      "certifieFlag": "c",
+      "certifieType": null,
+      "charaFlag": 0,
+      "raceGrade": "C（属地办赛）",
+      "province": "浙江省",
+      "city": "舟山市",
+      "area": "岱山县",
+      "regTime": "2024.12.01 00:00:00",
+      "regTimeEnd": "2024.12.08 00:00:00",
+      "gameDate": "2024.12.21",
+      "startTime": null,
+      "endTime": null,
+      "type": 1,
+      "project": "半程",
+      "scale": "200人",
+      "compNameOrganizer": "岱山县人民政府",
+      "compNameUndertaker": "岱山县文化和广电旅游体育局",
+      "compNamePromotionUnit": " 岱山县海岬跑团协会",
+      "compNameCoOrganizer": "无",
+      "joinUrl": "",
+      "webUrl": "",
+      "registerFlag": "0",
+      "bestResult": null,
+      "delay": 0,
+      "routeMap": "",
+      "showStatus": 1
+    },
+    "xwggdetails": null
+  }
+}

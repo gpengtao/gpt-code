@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import lombok.SneakyThrows;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class JsonUtil {
 	@SneakyThrows
 	public static <T> List<T> ofList(String json, Class<T> tClass) {
 		if (Strings.isNullOrEmpty(json)) {
-			return null;
+			return Lists.newArrayList();
 		}
 		JavaType javaType = OBJECT_MAPPER.getTypeFactory().constructParametricType(ArrayList.class, tClass);
 		return OBJECT_MAPPER.readValue(json, javaType);
